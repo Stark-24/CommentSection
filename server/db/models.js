@@ -4,6 +4,10 @@ const connection = require("./index.js");
 const Comments = connection.define(
   "Comments",
   {
+    id: {
+      type: Sequelize.INTEGER(10),
+      allowNull: false
+    },
     text: {
       type: Sequelize.STRING(200),
       allowNull: false
@@ -12,13 +16,18 @@ const Comments = connection.define(
       type: Sequelize.STRING(20),
       allowNull: false
     },
-    id_users: {
-      type: Sequelize.NUMBER(10),
-      allowNull: false
-    },
     time_created: {
       type: Sequelize.STRING(20),
       allowNull: false
+    },
+    users_id: {
+      type: Sequelize.INTEGER,
+      primaryKey: true,
+      autoIncrement: true // Automatically gets converted to SERIAL for postgres
+    },
+    replies_id: {
+      type: Sequelize.INTEGER(10),
+      allowNull: true
     }
   },
   { timestamps: false }
@@ -27,6 +36,10 @@ const Comments = connection.define(
 const Users = connection.define(
   "Users",
   {
+    id: {
+      type: Sequelize.INTEGER(10),
+      allowNull: false
+    },
     username: {
       type: Sequelize.STRING(20),
       allowNull: false
@@ -39,33 +52,12 @@ const Users = connection.define(
   { timestamps: false }
 );
 
-const Replies = connection.define(
-  "Replies",
-  {
-    id_comments: {
-      type: Sequelize.NUMBER(10),
-      allowNull: false
-    },
-    text: {
-      type: Sequelize.STRING(200),
-      allowNull: false
-    },
-    time_created: {
-      type: Sequelize.NUMBER(20),
-      allowNull: false
-    },
-    id_users: {
-      type: Sequelize.NUMBER(20),
-      allowNull: false
-    }
-  },
-  { timestamps: false }
-);
+Users.hasMany(Comments, { foreignKey: "users_id" });
+Comments.belongsTo({ foreignKey: "users_id" });
 
-connection.sync({ force: false });
+connection.sync({ force: false }); //remove force: false after initial schema is finalized
 
 module.exports = {
   Comments,
-  Users,
-  Replies
+  Users
 };
