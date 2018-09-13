@@ -1,9 +1,11 @@
 const postgres = require("pg");
 const Sequelize = require("sequelize");
 
-const connection = new Sequelize("commentsDb", "root", "", {
+const connection = new Sequelize("commentsdb", "alaahussein", "root", {
   host: "localhost",
-  dialect: "postgres"
+  dialect: "postgres",
+  port: 5432,
+  operatorsAliases: Sequelize.Op
 });
 
 connection
