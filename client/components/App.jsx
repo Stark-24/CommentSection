@@ -1,7 +1,8 @@
 import React from "react";
+import CommentBar from "./CommentBar.jsx";
 
 const App = props => {
-  return <div>HELLO FROM APP REACT</div>;
+  return <CommentBar />;
 };
 
 export default App;
