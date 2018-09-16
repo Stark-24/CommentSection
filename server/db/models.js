@@ -6,6 +6,7 @@ const Comments = connection.define(
   {
     id: {
       type: Sequelize.INTEGER,
+      primaryKey: true,
       allowNull: false
     },
     text: {
@@ -19,11 +20,6 @@ const Comments = connection.define(
     time_created: {
       type: Sequelize.STRING,
       allowNull: false
-    },
-    users_id: {
-      type: Sequelize.INTEGER,
-      primaryKey: true,
-      autoIncrement: true // Automatically gets converted to SERIAL for postgres
     },
     replies_id: {
       type: Sequelize.INTEGER,
@@ -46,15 +42,15 @@ const Users = connection.define(
       allowNull: false
     },
     pic: {
-      type: Sequelize.STRING(10000),
+      type: Sequelize.STRING,
       allowNull: false
     }
   },
   { timestamps: false }
 );
 
-Users.hasMany(Comments, { foreignKey: "users_id" });
-Comments.belongsTo(Users, { foreignKey: "users_id" });
+Users.hasMany(Comments);
+Comments.belongsTo(Users);
 
 connection.sync({ force: false }); //remove force: false after initial schema is finalized
 

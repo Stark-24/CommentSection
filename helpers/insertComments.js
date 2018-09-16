@@ -9,8 +9,8 @@ const insertComments = function(commentsData) {
       text: commentData.text,
       song_time: commentData.song_time,
       time_created: commentData.time_created,
-      users_id: commentData.users_id,
-      replies_id: commentData.replies_id
+      replies_id: commentData.replies_id,
+      UserId: commentData.UserId
     })
       .then(comment => {
         counter++;
