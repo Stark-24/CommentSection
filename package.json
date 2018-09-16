@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest",
-    "react-dev": "webpack -w sass --watch app/sass:public/stylesheets",
+    "react-dev": "webpack -w",
     "server-dev": "nodemon ./server/index.js"
   },
   "dependencies": {

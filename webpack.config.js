@@ -30,7 +30,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/public",
-    filename: "app.js"
+    path: __dirname + "/static",
+    filename: "bundle.js"
   }
 };
