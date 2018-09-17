@@ -11,22 +11,24 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         query: {
-          presets: ["react", "es2015", "env"]
+          presets: ["react", "es2015", "env"],
+          plugins: [["styled-components"], ["babel-plugin-styled-components"]]
         }
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: true
+            }
+          }
+        ]
       }
-      //   {
-      //     test: /\.scss$/,
-      //     use: [{
-      //         loader: "style-loader"
-      //     }, {
-      //         loader: "css-loader"
-      //     }, {
-      //         loader: "sass-loader",
-      //         options: {
-      //             includePaths: ["absolute/path/a", "absolute/path/b"]
-      //         }
-      //     }]
-      // }
     ]
   },
   output: {
