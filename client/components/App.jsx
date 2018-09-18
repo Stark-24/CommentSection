@@ -1,8 +1,14 @@
 import React from "react";
 import CommentBar from "./CommentBar.jsx";
+import ArtistInfo from "./ArtistInfo.jsx";
 
 const App = props => {
-  return <CommentBar />;
+  return (
+    <React.Fragment>
+      <CommentBar />
+      <ArtistInfo />
+    </React.Fragment>
+  );
 };
 
 export default App;

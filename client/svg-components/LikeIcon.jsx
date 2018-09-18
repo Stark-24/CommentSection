@@ -38,8 +38,8 @@ const styles = {
     fill: "#222"
   },
   size: {
-    width: "20px",
-    height: "20px"
+    width: "14px",
+    height: "14px"
   }
 };
 

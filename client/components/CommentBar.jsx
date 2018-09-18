@@ -2,6 +2,12 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 import LikeIcon from "../svg-components/LikeIcon.jsx";
+import LikeStat from "../svg-components/LikeStat.jsx";
+import RepostIcon from "../svg-components/RepostIcon.jsx";
+import ShareIcon from "../svg-components/ShareIcon.jsx";
+import More from "../svg-components/More.jsx";
+import PlayStat from "../svg-components/PlayStat.jsx";
+import RepostsStat from "../svg-components/RepostsStat.jsx";
 
 class CommentBar extends React.Component {
   constructor(props) {
@@ -46,20 +52,17 @@ class CommentBar extends React.Component {
 
   render() {
     return (
+      /* COMMENT ENGAGEMENT */
       <WrapperCommentEngagement>
         <div>
           {/* top-part*/}
           <WrapperCommentForm>
             {/* Avatar */}
             <Avatar>
-              <span
-                // style="background-image:url(https://i1.sndcdn.com/avatars-000500102301-r0y8lg-t120x120.jpg);width:40px;height:40px;"
-                class="sc-artwork sc-artwork-placeholder-2"
-                aria-label="Alaa Hussein’s avatar"
-                aria-role="img"
-              >
-                Image
-              </span>
+              <img
+                src="https://i.imgur.com/GzIKhyY.png"
+                style={{ width: "40px", height: "40px" }}
+              />
             </Avatar>
             {/* comment-form */}
             <Form onSubmit={e => this.handleSubmit(e)}>
@@ -78,32 +81,46 @@ class CommentBar extends React.Component {
             <WrapperButtonToolBar>
               {/* left buttons*/}
               <Button>
-                <LikeIcon />
+                <Icon>
+                  <LikeIcon />
+                </Icon>
               </Button>
-              <Button>repost</Button>
-              <Button>share</Button>
-              <Button>more</Button>
+              <Button>
+                <Icon>
+                  <RepostIcon />
+                </Icon>
+              </Button>
+              <Button>
+                <Icon>
+                  <ShareIcon />
+                </Icon>
+              </Button>
+              <Button>
+                <Icon>
+                  <More />
+                </Icon>
+              </Button>
             </WrapperButtonToolBar>
             {/* right buttons */}
             <WrapperListenEngagement>
               <MiniStats>
                 <Plays>
-                  <Icon />
-                  <Stats>16.6K</Stats>
+                  {" "}
+                  <PlayStat />
+                  <Stats> 16.6K</Stats>
                 </Plays>
               </MiniStats>
 
               <MiniStats>
                 <Likes>
-                  <Icon />
-                  <Stats>226</Stats>
+                  <LikeStat /> <Stats>226</Stats>
                 </Likes>
               </MiniStats>
 
               <MiniStats>
                 <Reposts>
-                  <Icon />
-                  <Stats>22</Stats>
+                  <RepostsStat />
+                  <Stats> 22</Stats>
                 </Reposts>
               </MiniStats>
             </WrapperListenEngagement>
@@ -116,7 +133,7 @@ class CommentBar extends React.Component {
 const Form = styled.form``;
 
 const WrapperCommentEngagement = styled.div`
-  background: orange;
+  background: white;
   display: flex;
   width: 557px;
   height: 83px;
@@ -134,34 +151,61 @@ const WrapperCommentForm = styled.div`
   padding: 5px;
   border: 1px solid #e5e5e5;
   margin: 0px;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(242, 242, 242);
 `;
 
 const Avatar = styled.div`
-  background: green;
-  display: block;
-  width: 40px;
-  height: 40px;
+  background: white;
+  display: flex;
+  margin-left: -5px;
+  margin-top: -5px;
 `;
 
 const WrapperButtonToolBar = styled.div`
-  background: yellow;
+  background: white;
   display: block;
   width: 139px;
   height: 33px;
 `;
 
 const CommentInput = styled.input`
-  background: grey;
-  display: block;
+  background: #fff;
   width: 485px;
   height: 25px;
-  border: 1px solid;
+  margin-left: 5px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
   padding-left: 9px;
   padding-right: 9px;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 14px;
+  font-family: inherit;
 `;
 
 const WrapperListenEngagement = styled.div`
-  background: pink;
+  background: white;
   display: flex;
   width: 418px;
   height: 33px;
@@ -182,15 +226,16 @@ const Button = styled.button`
   width: 8px;
   height: 20px;
   background-color: #fff;
-  font-size: 14px;
   margin-right: 5px;
+  margin-top: 10px;
 `;
 
 const MiniStats = styled.li`
   width: 52px;
   height: 33px;
   list-style: none;
-  display: block;
+  display: inline;
+  margin-top: 10px;
 `;
 
 const Plays = styled.span`
@@ -198,7 +243,7 @@ const Plays = styled.span`
   margin-bottom: 5px;
   width: 52px;
   height: 16px;
-  display: block;
+  display: inline;
 `;
 
 const Likes = styled.span`
@@ -207,12 +252,15 @@ const Likes = styled.span`
   margin-left: 13px;
   width: 41.5px;
   height: 16px;
-  display: block;
+  display: inline;
 `;
 
 const Icon = styled.span`
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  margin-left: -9px;
+  left: 4px;
+  right: 5px;
   display: block;
 `;
 
@@ -223,16 +271,19 @@ const Stats = styled.span`
   line-height: 16px;
   font-weight: 100;
   color: #999;
-  display: block;
+  display: inline;
+  margin-top: 1px;
+  margin-left: 3px;
+  position: absolute;
 `;
 
 const Reposts = styled.span`
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: -5px;
+  margin-bottom: 0px;
   margin-left: 13px;
   width: 34px;
   height: 16px;
-  display: block;
+  display: inline;
 `;
 
 export default CommentBar;
