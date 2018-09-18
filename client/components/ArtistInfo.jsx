@@ -62,6 +62,8 @@ const WrapperAboutRight = styled.div`
   width: 120px;
   height: 250px;
   margin-top: 20px;
+  float: left;
+  display: block;
 `;
 const ArtistImg = styled.div`
   width: 120px;
