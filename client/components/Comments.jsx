@@ -14,7 +14,18 @@ class Comments extends React.Component {
       <Wrapper>
         <Seperator>
           <CommentIcon />
-          <span style={{ marginLeft: "5px" }}>6 Comments</span>
+          <span
+            style={{
+              marginLeft: "5px",
+              fontSize: "14px",
+              color: "#999",
+              fontWeight: "100",
+              fontFamily:
+                "Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans"
+            }}
+          >
+            {this.props.comments.length} comments
+          </span>
         </Seperator>
         <CommentsList>
           <div>
@@ -37,6 +48,8 @@ class Comments extends React.Component {
 
 const Wrapper = styled.div`
   display: block;
+  width: 680px;
+  height: 120px;
 `;
 
 const Seperator = styled.div`
@@ -46,6 +59,9 @@ const Seperator = styled.div`
   width: 680px;
 `;
 
-const CommentsList = styled.div``;
+const CommentsList = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export default Comments;

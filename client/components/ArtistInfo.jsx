@@ -73,6 +73,9 @@ const ArtistImg = styled.div`
   background-image: url("https://i.imgur.com/7uUMgbF.png");
   background-size: cover;
   background-position: 50% 50%;
+  border-width: 1px;
+  border-color: #e5e5e5;
+  border-style: solid;
 `;
 const ReportButton = styled.div`
   margin-top: 30px;

@@ -29,6 +29,8 @@ const Wrapper = styled.div`
   font-size: 12px;
   width: 680px;
   height: 175px;
+  font-family: Interstate, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    Garuda, Verdana, Tahoma, sans-serif;
 `;
 
 export default Description;

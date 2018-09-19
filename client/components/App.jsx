@@ -26,22 +26,28 @@ class App extends React.Component {
   fetchComments() {
     axios
       .get("/api/comments", { params: {} })
-      .then(({ data }) =>
+      .then(({ data }) => {
+        data.sort(function(b, a) {
+          return a.id - b.id;
+        });
         this.setState({ comments: data }, () =>
           console.log("fetched comments from db", this.state.comments)
-        )
-      )
+        );
+      })
       .catch(err => console.log(err));
   }
 
   fetchUsers() {
     axios
       .get("/api/users", { params: {} })
-      .then(({ data }) =>
+      .then(({ data }) => {
+        data.sort(function(a, b) {
+          return a.id - b.id;
+        });
         this.setState({ users: data }, () =>
           console.log("fetched users from db", this.state.users)
-        )
-      )
+        );
+      })
       .then(() => this.fetchComments())
       .catch(err => console.log(err));
   }
@@ -51,7 +57,7 @@ class App extends React.Component {
       <AppWrapper>
         <React.Fragment>
           {/* Top */}
-          <CommentBar />
+          <CommentBar comments={this.state.comments} />
           {/* Bottom */}
           <BottomWrapper>
             <ArtistInfo />

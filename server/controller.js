@@ -1,5 +1,9 @@
 const { Comments } = require("./db/models.js");
 const { Users } = require("./db/models.js");
+const date = new Date();
+const current_hour = date.getHours();
+const currrent_min = date.getMinutes();
+const currrent_sec = date.getSeconds();
 
 exports.fetchAllComments = (req, res) => {
   console.log("In fetchAllComments...");
@@ -17,14 +21,14 @@ exports.fetchAllComments = (req, res) => {
 exports.createOneComment = (req, res) => {
   console.log("In createOneComment...");
   console.log("req.body", req.body);
-  const { id, text, song_time, time_created, UserId, replies_id } = req.body;
+  const { id, text } = req.body;
   Comments.create({
     id: id,
     text: text,
-    song_time: song_time,
-    time_created: time_created,
-    UserId: UserId,
-    replies_id: replies_id
+    song_time: "0:01:56",
+    time_created: `${current_hour}:${currrent_min}:${currrent_sec}`,
+    UserId: 101,
+    replies_id: null
   })
     .then(comment => {
       console.log("created comment", comment);

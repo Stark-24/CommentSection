@@ -32,7 +32,7 @@ class CommentBar extends React.Component {
     const { text } = this.state;
     console.log(this.state.text);
     axios
-      .post("/api/comments", { text: text })
+      .post("/api/comments", { id: this.props.comments.length + 1, text: text })
       .then(this.props.fetchComments())
       .catch(err => console.log(err));
     e.target.reset();
@@ -130,7 +130,7 @@ const WrapperCommentEngagement = styled.div`
   width: 817px;
   height: 83px;
   border: 1px solid #fff;
-  padding-bottom: 4px;
+  padding-bottom: 5px;
   margin-bottom: 1px;
   box-shadow: 0 1px 0 0 #f2f2f2;
 `;
@@ -139,7 +139,7 @@ const WrapperCommentForm = styled.div`
   background: blue;
   display: flex;
   width: 805px;
-  height: 40px;
+  height: 28px;
   padding: 5px;
   border: 1px solid #e5e5e5;
   margin: 0px;
@@ -160,6 +160,8 @@ const Avatar = styled.div`
   display: flex;
   margin-left: -5px;
   margin-top: -5px;
+  width: 40px;
+  height: 40px;
 `;
 
 const WrapperButtonToolBar = styled.div`
