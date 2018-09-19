@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Comments from "../components/Comments.jsx";
 import styled from "styled-components";
 import LikeIcon from "../svg-components/LikeIcon.jsx";
 import LikeStat from "../svg-components/LikeStat.jsx";
@@ -13,10 +14,8 @@ class CommentBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "",
-      comments: []
+      text: ""
     };
-    this.fetchComments = this.fetchComments.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -34,20 +33,9 @@ class CommentBar extends React.Component {
     console.log(this.state.text);
     axios
       .post("/api/comments", { text: text })
-      .then(this.fetchComments())
+      .then(this.props.fetchComments())
       .catch(err => console.log(err));
     e.target.reset();
-  }
-
-  fetchComments() {
-    axios
-      .get("/api/comments", { params: {} })
-      .then(({ data }) =>
-        this.setState({ comments: data }, () =>
-          console.log(this.state.comments)
-        )
-      )
-      .catch(err => console.log(err));
   }
 
   render() {
@@ -135,7 +123,7 @@ const Form = styled.form``;
 const WrapperCommentEngagement = styled.div`
   background: white;
   display: flex;
-  width: 557px;
+  width: 817px;
   height: 83px;
   border: 1px solid #fff;
   padding-bottom: 4px;
@@ -146,7 +134,7 @@ const WrapperCommentEngagement = styled.div`
 const WrapperCommentForm = styled.div`
   background: blue;
   display: flex;
-  width: 545px;
+  width: 805px;
   height: 28px;
   padding: 5px;
   border: 1px solid #e5e5e5;
@@ -179,7 +167,7 @@ const WrapperButtonToolBar = styled.div`
 
 const CommentInput = styled.input`
   background: #fff;
-  width: 485px;
+  width: 745px;
   height: 25px;
   margin-left: 5px;
   border: 1px solid #e5e5e5;

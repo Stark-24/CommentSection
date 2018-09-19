@@ -56,6 +56,7 @@ class ArtistInfo extends React.Component {
     );
   }
 }
+
 const Info = styled.div``;
 const WrapperAboutRight = styled.div`
   background: white;

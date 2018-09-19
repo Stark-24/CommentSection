@@ -66,3 +66,17 @@ exports.fetchAllCommentReplies = (req, res) => {
     })
     .catch(err => res.status(404).send(err));
 };
+
+exports.fetchAllUsers = (req, res) => {
+  console.log("In fetchAllUsers...");
+  console.log("req.body in fetchAllUsers", req.body);
+  Users.findAll({})
+    .then(users => {
+      if (users) {
+        res.status(200).send(users);
+      } else {
+        res.status(404).send("Users not found");
+      }
+    })
+    .catch(err => res.status(404).send(err));
+};

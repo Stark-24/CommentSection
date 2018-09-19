@@ -9,4 +9,6 @@ router
 
 router.route("/replies").get(controller.fetchAllCommentReplies);
 
+router.route("/users").get(controller.fetchAllUsers);
+
 module.exports = router;
