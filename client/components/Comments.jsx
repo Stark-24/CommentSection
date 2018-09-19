@@ -41,8 +41,9 @@ const Wrapper = styled.div`
 
 const Seperator = styled.div`
   border-bottom: 1px solid #f2f2f2;
-  margin-top: 15px;
+  margin-top: 25px;
   padding-bottom: 5px;
+  width: 680px;
 `;
 
 const CommentsList = styled.div``;

@@ -71,9 +71,12 @@ class App extends React.Component {
 }
 const AppWrapper = styled.div`
   border-right: 1px solid #f2f2f2;
-  width: 560px;
-  hieght: 700px;
+  width: 820px;
+  hieght: 725px;
   padding-right: 30px;
+  float: left;
+  padding-top: 20px;
+  margin-right: 330px;
 `;
 
 const Feed = styled.div`

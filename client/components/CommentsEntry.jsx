@@ -21,7 +21,13 @@ const CommentsEntry = props => {
   );
 };
 
-const CommentWrapper = styled.div``;
+const CommentWrapper = styled.div`
+  width: 660px;
+  height: 40px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+`;
 const UserImage = styled.div`
   border-radius: 50%;
   border-weight: 2px;

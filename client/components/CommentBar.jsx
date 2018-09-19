@@ -71,21 +71,25 @@ class CommentBar extends React.Component {
               <Button>
                 <Icon>
                   <LikeIcon />
+                  <ButtonHeader>Like</ButtonHeader>
                 </Icon>
               </Button>
               <Button>
                 <Icon>
                   <RepostIcon />
+                  <ButtonHeader>Repost</ButtonHeader>
                 </Icon>
               </Button>
               <Button>
                 <Icon>
                   <ShareIcon />
+                  <ButtonHeader>Share</ButtonHeader>
                 </Icon>
               </Button>
               <Button>
                 <Icon>
                   <More />
+                  <ButtonHeader>More</ButtonHeader>
                 </Icon>
               </Button>
             </WrapperButtonToolBar>
@@ -161,7 +165,7 @@ const Avatar = styled.div`
 const WrapperButtonToolBar = styled.div`
   background: white;
   display: block;
-  width: 139px;
+  width: 321px;
   height: 33px;
 `;
 
@@ -195,7 +199,7 @@ const CommentInput = styled.input`
 const WrapperListenEngagement = styled.div`
   background: white;
   display: flex;
-  width: 418px;
+  width: 496px;
   height: 33px;
   flex-direction: row;
   justify-content: flex-end;
@@ -206,16 +210,21 @@ const WrapperToolBarAndListenEngagement = styled.div`
 `;
 
 const Button = styled.button`
-  border: 1px solid #e5e5e5;
+  width: 75px;
+  height: 25px;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 10px;
   padding-right: 11px;
-  width: 8px;
-  height: 20px;
-  background-color: #fff;
+  border: 1px solid #e5e5e5;
   margin-right: 5px;
   margin-top: 10px;
+  background-color: #fff;
+  display: inline;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 `;
 
 const MiniStats = styled.li`
@@ -246,7 +255,8 @@ const Likes = styled.span`
 const Icon = styled.span`
   width: 20px;
   height: 20px;
-  margin-left: -9px;
+  margin-left: -5px;
+  margin-top: 2px;
   left: 4px;
   right: 5px;
   display: block;
@@ -262,6 +272,18 @@ const Stats = styled.span`
   display: inline;
   margin-top: 1px;
   margin-left: 3px;
+  position: absolute;
+`;
+
+const ButtonHeader = styled.span`
+  width: auto;
+  height: auto;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 300;
+  color: #333;
+  display: inline;
+  margin-left: 6px;
   position: absolute;
 `;
 

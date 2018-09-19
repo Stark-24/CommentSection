@@ -27,6 +27,8 @@ const Wrapper = styled.div`
   float: right;
   display: block;
   font-size: 12px;
+  width: 680px;
+  height: 175px;
 `;
 
 export default Description;
