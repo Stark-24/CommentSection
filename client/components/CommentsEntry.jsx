@@ -29,17 +29,7 @@ const CommentsEntry = props => {
       <Meta>
         <TimeCreated>{props.oneComment.time_created}</TimeCreated>
         <ReplyButton>
-          <img
-            src="https://i.imgur.com/0VlU9i0.png"
-            style={{
-              width: "15px",
-              height: "15px",
-              paddingRight: "10px",
-              marginBottom: "5px",
-              position: "absolute",
-              display: "block"
-            }}
-          />
+          <ReplyImg />
           <span style={{ fontSize: "10px" }}>Reply</span>
         </ReplyButton>
       </Meta>
@@ -146,4 +136,25 @@ const ReplyButton = styled.button`
   font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande,
     Lucida Sans Unicode, Geneva, Verdana, sans-serif;
 `;
+
+const Icon = styled.div`
+  width: 20px;
+  height: 20px;
+  margin-left: -5px;
+  margin-top: 2px;
+  left: 4px;
+  right: 5px;
+  display: block;
+`;
+
+const ReplyImg = styled.button`
+  background-image: url("https://i.imgur.com/0VlU9i0.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 60px,
+  height: 20px,
+  position: absolute,
+  display: block
+`;
+
 export default CommentsEntry;

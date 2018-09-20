@@ -17,7 +17,7 @@ const CommentIcon = props => {
         <g
           id="Rectangle_217"
           data-name="Rectangle 217"
-          style={styles.commentIconSize}
+          style={styles.commentIcon}
           transform="translate(592 117)"
         >
           <rect style={styles.commentIcon2} width="101" height="71" rx="24" />
@@ -33,7 +33,7 @@ const CommentIcon = props => {
         <path
           id="Path_36"
           data-name="Path 36"
-          style={styles.commentIconSize}
+          style={styles.commentIcon}
           d="M3646.106,1467v28L3673,1467Z"
           transform="translate(-3033 -1279)"
         />
@@ -43,7 +43,7 @@ const CommentIcon = props => {
 };
 
 const styles = {
-  commentIconSize: {
+  commentIcon: {
     fill: "#999",
     stroke: "#999"
   },
