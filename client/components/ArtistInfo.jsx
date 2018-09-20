@@ -43,7 +43,6 @@ class ArtistInfo extends React.Component {
               style={{
                 fontSize: "11px",
                 marginLeft: "5px",
-                color: "#666",
                 marginTop: "1px",
                 position: "absolute"
               }}
@@ -80,6 +79,11 @@ const ArtistImg = styled.div`
 const ReportButton = styled.div`
   margin-top: 30px;
   margin-left: 5px;
+  color: #666;
+  &:hover {
+    cursor: pointer;
+    color: #333;
+  }
 `;
 const ArtistName = styled.div`
   width: 120;
@@ -136,6 +140,10 @@ const Stats = styled.div`
   margin-top: 1px;
   margin-left: 3px;
   position: relative;
+  &:hover {
+    cursor: pointer;
+    color: #333;
+  }
 `;
 
 export default ArtistInfo;

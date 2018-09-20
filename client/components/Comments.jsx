@@ -40,6 +40,9 @@ class Comments extends React.Component {
               );
             })}
           </div>
+          <BottomBorder>
+            <CloudImg />
+          </BottomBorder>
         </CommentsList>
       </Wrapper>
     );
@@ -63,5 +66,23 @@ const CommentsList = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
+const BottomBorder = styled.div`
+  margin-top: 20px;
+  border-bottom: 1px solid #f2f2f2;
+`;
+const CloudImg = styled.image`
+  margin-bottom: 5px;
+  content: "";
+  position: absolute;
+  top: 4017%;
+  left: 70%;
+  width: 30px;
+  height: 18px;
+  background-image: url("https://i.imgur.com/tXfMYi4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+  border-bottom: inherit;
+  border-bottom-color: transparent;
+`;
 export default Comments;

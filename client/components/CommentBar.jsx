@@ -196,6 +196,11 @@ const CommentInput = styled.input`
   font-stretch: normal;
   font-size: 14px;
   font-family: inherit;
+  outline: none;
+  &:active {
+    cursor: pointer;
+    border-color: #c1c1c1;
+  }
 `;
 
 const WrapperListenEngagement = styled.div`
@@ -227,6 +232,15 @@ const Button = styled.button`
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  &:hover {
+    cursor: pointer;
+    border-color: #c1c1c1;
+  }
+  &:active {
+    cursor: click;
+    border-color: #f50;
+  }
+  outline: none;
 `;
 
 const MiniStats = styled.li`
@@ -275,6 +289,10 @@ const Stats = styled.span`
   margin-top: 1px;
   margin-left: 3px;
   position: absolute;
+  &:hover {
+    cursor: pointer;
+    color: #333;
+  }
 `;
 
 const ButtonHeader = styled.span`

@@ -6,7 +6,7 @@ const CommentIcon = props => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 101 100.242"
-      style={styles.size}
+      style={styles.commentIconSize}
     >
       <defs />
       <g
@@ -17,12 +17,12 @@ const CommentIcon = props => {
         <g
           id="Rectangle_217"
           data-name="Rectangle 217"
-          style={styles.cls1}
+          style={styles.commentIconSize}
           transform="translate(592 117)"
         >
-          <rect style={styles.cls2} width="101" height="71" rx="24" />
+          <rect style={styles.commentIcon2} width="101" height="71" rx="24" />
           <rect
-            style={styles.cls3}
+            style={styles.commentIcon3}
             x="0.5"
             y="0.5"
             width="100"
@@ -33,7 +33,7 @@ const CommentIcon = props => {
         <path
           id="Path_36"
           data-name="Path 36"
-          style={styles.cls1}
+          style={styles.commentIconSize}
           d="M3646.106,1467v28L3673,1467Z"
           transform="translate(-3033 -1279)"
         />
@@ -43,17 +43,17 @@ const CommentIcon = props => {
 };
 
 const styles = {
-  cls1: {
+  commentIconSize: {
     fill: "#999",
     stroke: "#999"
   },
-  cls2: {
+  commentIcon2: {
     stroke: "none"
   },
-  cls3: {
+  commentIcon3: {
     fill: "none"
   },
-  size: {
+  commentIconSize: {
     width: "14px",
     height: "14px"
   }

@@ -6,7 +6,7 @@ const relatedTracks = props => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 88 88"
-      style={styles.size}
+      style={styles.relatedTrackSize}
     >
       <defs />
       <g
@@ -17,7 +17,7 @@ const relatedTracks = props => {
         <rect
           id="Rectangle_194"
           data-name="Rectangle 194"
-          style={styles.cls1}
+          style={styles.relatedTrack}
           width="8"
           height="18"
           transform="translate(24 190)"
@@ -25,7 +25,7 @@ const relatedTracks = props => {
         <rect
           id="Rectangle_195"
           data-name="Rectangle 195"
-          styles={styles.cls1}
+          styles={styles.relatedTrack}
           width="8"
           height="60"
           transform="translate(44 168)"
@@ -33,7 +33,7 @@ const relatedTracks = props => {
         <rect
           id="Rectangle_196"
           data-name="Rectangle 196"
-          style={styles.cls1}
+          style={styles.relatedTrack}
           width="8"
           height="88"
           transform="translate(64 152)"
@@ -41,7 +41,7 @@ const relatedTracks = props => {
         <rect
           id="Rectangle_197"
           data-name="Rectangle 197"
-          style={styles.cls1}
+          style={styles.relatedTrack}
           width="8"
           height="40"
           transform="translate(84 176)"
@@ -49,7 +49,7 @@ const relatedTracks = props => {
         <rect
           id="Rectangle_198"
           data-name="Rectangle 198"
-          style={styles.cls1}
+          style={styles.relatedTrack}
           width="8"
           height="18"
           transform="translate(104 190)"
@@ -60,10 +60,10 @@ const relatedTracks = props => {
 };
 
 const styles = {
-  cls1: {
+  relatedTrack: {
     fill: "#333"
   },
-  size: {
+  relatedTrackSize: {
     width: "16px",
     height: "12px"
   }
