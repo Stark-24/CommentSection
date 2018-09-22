@@ -1,0 +1,43 @@
+version: "2"
+services:
+  practice_docker:
+    build: .
+    ports:
+      - 9003:9003
+    depends_on:
+      - db
+    environment:
+      # - DATABASE_URL=postgres://alaahussein@172.31.12.146:5432/commentsdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=commentsdb
+
+
+# Use postgres/example user/password credentials
+version: '3.1'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5432:5432"
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  server:
+    image: alaahussein94/starkloud-comments
+    ports:
+      - 9003:9003
+    depends_on:
+      - db

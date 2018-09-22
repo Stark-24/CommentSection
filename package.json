@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "react-dev": "webpack -w",
-    "server-dev": "nodemon ./server/index.js"
+    "start": "nodemon ./server/index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -24,6 +24,9 @@
     "cors": "^2.8.4",
     "enzyme": "^3.6.0",
     "express": "^4.16.3",
+    "grunt": "^1.0.3",
+    "grunt-aws": "^0.6.2",
+    "grunt-contrib-watch": "^1.1.0",
     "helmet": "^3.13.0",
     "jest": "^23.5.0",
     "jquery": "^3.3.1",

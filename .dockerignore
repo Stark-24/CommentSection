@@ -1,4 +1,4 @@
 node_modules
+aws-credentials.json
 server/db/config/config.json
 static/bundle.js
-aws-credentials.json
