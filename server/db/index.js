@@ -1,8 +1,8 @@
 const postgres = require("pg");
 const Sequelize = require("sequelize");
 
-const connection = new Sequelize("commentsdb", "postgres", "example", {
-  // host: "172.31.12.146",
+const connection = new Sequelize("commentsdb", "postgres", "", {
+  // host: "localhost",
   host: "db",
   dialect: "postgres",
   port: 5432,

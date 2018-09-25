@@ -32,7 +32,7 @@ class CommentBar extends React.Component {
     const { text } = this.state;
     console.log(this.state.text);
     axios
-      .post("http://172.31.12.146:9003/api/comments", {
+      .post("http://54.183.1.8:9003/api/comments", {
         id: this.props.comments.length + 1,
         text: text
       })

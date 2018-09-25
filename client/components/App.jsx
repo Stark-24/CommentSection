@@ -25,7 +25,7 @@ class App extends React.Component {
 
   fetchComments() {
     axios
-      .get("http://172.31.12.146:9003/api/comments", { params: {} })
+      .get("http://54.183.1.8:9003/api/comments", { params: {} })
       .then(({ data }) => {
         data.sort(function(b, a) {
           return a.id - b.id;
@@ -39,7 +39,7 @@ class App extends React.Component {
 
   fetchUsers() {
     axios
-      .get("http://172.31.12.146:9003/api/users", { params: {} })
+      .get("http://54.183.1.8:9003/api/users", { params: {} })
       .then(({ data }) => {
         data.sort(function(a, b) {
           return a.id - b.id;

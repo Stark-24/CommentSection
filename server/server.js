@@ -21,9 +21,5 @@ app.use(cors());
 //Routes
 app.use("/api", router);
 
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to StarkCloud!" });
-});
-
 //Export
 module.exports = app;
